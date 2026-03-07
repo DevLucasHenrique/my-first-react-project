@@ -1,0 +1,114 @@
+body {
+  background-color: var(--light);
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+}
+
+header {
+  box-shadow: 1px 1px 1px #2836186e;
+}
+
+header nav.big-screen {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav.mobile {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mobile-logo-text {
+  width: 100px;
+}
+
+.show-menu {
+  color: var(--lightGreen);
+  background-color: transparent;
+  font-size: 1.6em;
+  border: none;
+  transition: 0.2s ease-out;
+}
+
+@keyframes menuOpen {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px) scaleX(0.95);
+    clip-path: inset(0 0 100% 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(4px) scaleX(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scaleX(1);
+    clip-path: inset(0 0 0% 0);
+  }
+}
+
+@keyframes menuClose {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scaleX(1);
+    clip-path: inset(0 0 0% 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-20px) scaleX(0.95);
+    clip-path: inset(0 0 100% 0);
+  }
+}
+
+.menu {
+  transform-origin: left;
+}
+
+.menu.open {
+  animation: menuOpen 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.menu.close {
+  animation: menuClose 0.25s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+
+.normal {
+  rotate: 0deg;
+}
+
+.down {
+  rotate: -90deg;
+}
+
+.menu {
+  overflow-y: hidden;
+  justify-content: space-around;
+  font-size: 2em;
+  gap: 24px;
+  padding: 24px;
+  position: absolute;
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: var(--lightGreen);
+  width: 100dvw;
+  height: 100dvh;
+}
+
+.menu > a {
+  text-decoration: none;
+  color: white;
+  border-bottom: 2px solid var(--darkGreen);
+  padding-bottom: 4px;
+  transition: 0.3s ease;
+}
+
+.menu > a:hover {
+  font-weight: 500;
+  transform: translateX(5px);
+  border-bottom: 2px solid white;
+}
